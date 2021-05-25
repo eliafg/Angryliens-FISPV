@@ -28,7 +28,7 @@ func shoot(var shoot_angle,var pos,var tr):
 	var Vy = init_velocity*sin(shoot_angle)
 	var L = pow(init_velocity,2)*sin(2*shoot_angle)/gravity
 	var T = 2*init_velocity*sin(shoot_angle)/gravity
-	t+=0.006
+	t+=0.03
 	var X = Vx * t * dt
 	var Y = Vy * t * dt - gravity * pow(t*dt,2) / 2
 	tr.origin.x = pos.x+X

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scripts/CreditsMenu.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/Control.gd" type="Script" id=2]
@@ -6,6 +6,9 @@
 [ext_resource path="res://Resources/Images/AngryliensBG.jpeg" type="Texture" id=4]
 [ext_resource path="res://Resources/Menu/kenvector_future_thin.ttf" type="DynamicFontData" id=5]
 [ext_resource path="res://Resources/Menu/kenvector_future.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://Resources/Sounds/Two Moons - Bobby Richards.wav" type="AudioStream" id=7]
+[ext_resource path="res://Resources/Images/key.png" type="Texture" id=8]
+[ext_resource path="res://Resources/Images/space-bar.png" type="Texture" id=9]
 
 [sub_resource type="DynamicFont" id=1]
 size = 25
@@ -59,10 +62,10 @@ rect_pivot_offset = Vector2( 588.808, 340.183 )
 texture_normal = ExtResource( 3 )
 
 [node name="Label" type="Label" parent="Control/VBoxContainer/TextureButton"]
-margin_left = 16.4217
-margin_top = 17.4811
-margin_right = 209.422
-margin_bottom = 109.481
+margin_left = 13.7852
+margin_top = 16.8446
+margin_right = 206.785
+margin_bottom = 108.844
 custom_fonts/font = SubResource( 1 )
 text = "Regresar
 "
@@ -71,17 +74,39 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="Control"]
-margin_left = -509.764
-margin_top = -143.165
-margin_right = 553.236
-margin_bottom = 252.835
+margin_left = -549.197
+margin_top = -271.353
+margin_right = 513.803
+margin_bottom = 124.647
 custom_fonts/font = SubResource( 2 )
 text = "Mueve la ballesta con las
-flechas de arriba hacia abajo
+teclas arriba y abajo
+
+
 
 Dispara con la barra espaciadora"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="relax" type="AudioStreamPlayer" parent="Control"]
+stream = ExtResource( 7 )
+volume_db = -20.0
+
+[node name="key" type="Sprite" parent="."]
+position = Vector2( 2.91797, -143.496 )
+scale = Vector2( 0.154118, 0.152213 )
+texture = ExtResource( 8 )
+
+[node name="key" type="Sprite" parent="key"]
+position = Vector2( -6.2998, 456.726 )
+rotation = -3.14262
+scale = Vector2( 1.01695, 1.21311 )
+texture = ExtResource( 8 )
+
+[node name="space-bar" type="Sprite" parent="."]
+position = Vector2( 8.77112, 62.7237 )
+texture = ExtResource( 9 )
+
 [connection signal="pressed" from="Control/VBoxContainer/TextureButton" to="." method="_on_TextureButton_pressed"]

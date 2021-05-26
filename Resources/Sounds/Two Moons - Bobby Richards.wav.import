@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Two Moons - Bobby Richards.wav-97625fb4ff2896ebea3d6d302ad06f6d.sample"
+
+[deps]
+
+source_file="res://Resources/Sounds/Two Moons - Bobby Richards.wav"
+dest_files=[ "res://.import/Two Moons - Bobby Richards.wav-97625fb4ff2896ebea3d6d302ad06f6d.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Scenes/GameOver.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/Control.gd" type="Script" id=2]
@@ -6,6 +6,10 @@
 [ext_resource path="res://Resources/Images/AngryliensBG.jpeg" type="Texture" id=4]
 [ext_resource path="res://Resources/Menu/kenvector_future_thin.ttf" type="DynamicFontData" id=5]
 [ext_resource path="res://Resources/Menu/kenvector_future.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://Resources/Sounds/gameover.wav" type="AudioStream" id=7]
+[ext_resource path="res://Resources/Sounds/Two Moons - Bobby Richards.wav" type="AudioStream" id=8]
+[ext_resource path="res://Resources/Images/negro.jpg" type="Texture" id=9]
+[ext_resource path="res://Resources/Images/amarillo.jpg" type="Texture" id=10]
 
 [sub_resource type="DynamicFont" id=1]
 size = 25
@@ -59,10 +63,10 @@ rect_pivot_offset = Vector2( 588.808, 340.183 )
 texture_normal = ExtResource( 3 )
 
 [node name="Label" type="Label" parent="Control/VBoxContainer/Jugar"]
-margin_left = 45.7886
-margin_top = 20.6559
-margin_right = 238.789
-margin_bottom = 112.656
+margin_left = 45.2642
+margin_top = 14.8937
+margin_right = 238.265
+margin_bottom = 106.894
 custom_fonts/font = SubResource( 1 )
 text = "Jugar"
 __meta__ = {
@@ -88,6 +92,12 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="negro" type="Sprite" parent="Control/VBoxContainer"]
+show_behind_parent = true
+position = Vector2( 96.9467, 70.6462 )
+scale = Vector2( 0.316687, 0.328826 )
+texture = ExtResource( 9 )
+
 [node name="Label" type="Label" parent="Control"]
 margin_left = -507.576
 margin_top = -148.019
@@ -101,5 +111,21 @@ __meta__ = {
 "_edit_lock_": true,
 "_edit_use_anchors_": false
 }
+
+[node name="amarillo" type="Sprite" parent="Control/Label"]
+show_behind_parent = true
+position = Vector2( 517.344, 68.1017 )
+scale = Vector2( 0.728392, 0.255849 )
+texture = ExtResource( 10 )
+
+[node name="relax" type="AudioStreamPlayer" parent="Control"]
+stream = ExtResource( 8 )
+volume_db = -30.0
+mix_target = 2
+
+[node name="gameover" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+volume_db = 5.0
+
 [connection signal="pressed" from="Control/VBoxContainer/Jugar" to="." method="_on_Jugar_pressed"]
 [connection signal="pressed" from="Control/VBoxContainer/Menu" to="." method="_on_Menu_pressed"]

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Prism - Bobby Richards.wav-65c53479bc1231a0ef1b26dbcc0d3efe.sample"
+
+[deps]
+
+source_file="res://Resources/Sounds/Prism - Bobby Richards.wav"
+dest_files=[ "res://.import/Prism - Bobby Richards.wav-65c53479bc1231a0ef1b26dbcc0d3efe.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=0

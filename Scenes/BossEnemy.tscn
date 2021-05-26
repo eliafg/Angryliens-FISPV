@@ -66,4 +66,5 @@ __meta__ = {
 [node name="AttackCD" type="Timer" parent="."]
 wait_time = 9.0
 one_shot = true
+
 [connection signal="timeout" from="AttackCD" to="." method="_on_AttackCD_timeout"]

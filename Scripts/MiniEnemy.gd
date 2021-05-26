@@ -27,5 +27,7 @@ func checkhit(tr):
 	if tr.origin.x <= 15.71:
 		Global.health -= 1
 		self.queue_free()
+	elif Global.health==0:
+		self.queue_free()
 	pass
 

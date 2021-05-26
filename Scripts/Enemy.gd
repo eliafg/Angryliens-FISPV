@@ -17,6 +17,8 @@ func _process(delta):
 	if position.x <= 15.71:
 		Global.health -= 1
 		self.queue_free()
+	elif Global.health==0:
+		self.queue_free()
 	pass
 
 func moveenemy(tr):
@@ -24,4 +26,3 @@ func moveenemy(tr):
 	tr.origin.x = tr.origin.x-X
 	return tr
 	pass
-

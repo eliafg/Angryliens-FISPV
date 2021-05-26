@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://Resources/Player/Spaceship.png" type="Texture" id=2]
@@ -6,6 +6,11 @@
 [ext_resource path="res://Resources/Player/Crossbow.png" type="Texture" id=4]
 [ext_resource path="res://Resources/Player/Player.png" type="Texture" id=5]
 [ext_resource path="res://Resources/Menu/kenvector_future_thin.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://Resources/Sounds/bengal.wav" type="AudioStream" id=7]
+[ext_resource path="res://Resources/Sounds/boss.wav" type="AudioStream" id=8]
+[ext_resource path="res://Resources/Sounds/Prism - Bobby Richards.wav" type="AudioStream" id=9]
+[ext_resource path="res://Resources/Images/level2.jpg" type="Texture" id=10]
+[ext_resource path="res://Resources/Sounds/explosionBoss.wav" type="AudioStream" id=11]
 
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 6 )
@@ -18,13 +23,10 @@ font_data = ExtResource( 6 )
 script = ExtResource( 1 )
 
 [node name="Background" type="Sprite" parent="."]
-position = Vector2( 411.847, 276.974 )
-scale = Vector2( 0.3224, 0.345936 )
+position = Vector2( -10.3227, 372.893 )
+scale = Vector2( 0.710548, 0.34576 )
 z_index = -1
 texture = ExtResource( 3 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="Spaceship" type="Sprite" parent="."]
 position = Vector2( 93.21, 642.175 )
@@ -81,3 +83,23 @@ one_shot = true
 [node name="CooldownEnemy" type="Timer" parent="."]
 wait_time = 4.0
 one_shot = true
+
+[node name="lasershot" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+volume_db = -5.0
+
+[node name="soundboss" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+
+[node name="backgroundmusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+volume_db = -15.0
+
+[node name="level2" type="Sprite" parent="."]
+show_behind_parent = true
+position = Vector2( -9.03241, 1502.04 )
+scale = Vector2( 0.901755, 0.770052 )
+texture = ExtResource( 10 )
+
+[node name="on" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 11 )

@@ -15,9 +15,11 @@ func _process(_delta):
 	get_node("Enemy").transform=rotacion(get_node("Position2D").transform, get_node("Enemy").transform)
 	if AttCD.is_stopped():
 		AttCD.start()
-	
 	get_node("HP/Countdown").text = str(round(AttCD.time_left))
 	print(Global.health)
+	
+	if Global.health==0:
+		self.queue_free()
 	pass
 
 func rotacion(var a, var b):

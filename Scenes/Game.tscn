@@ -59,24 +59,23 @@ margin_top = 5.35109
 margin_right = 200.586
 margin_bottom = 36.3511
 custom_fonts/font = SubResource( 2 )
-text = "Puntuación: "
+text = "Puntuación: 0"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Lives" type="Label" parent="."]
-margin_left = 5.46355
-margin_top = 35.6576
-margin_right = 199.464
-margin_bottom = 66.6576
+margin_left = 5.0
+margin_top = 36.0
+margin_right = 1069.0
+margin_bottom = 67.0
 custom_fonts/font = SubResource( 2 )
-text = "Vidas: "
+text = "Vidas:  5"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="CooldownShoot" type="Timer" parent="."]
-wait_time = 3.0
 one_shot = true
 
 [node name="CooldownEnemy" type="Timer" parent="."]

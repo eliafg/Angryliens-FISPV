@@ -1,5 +1,5 @@
 extends Node
 
 
-var lives = 5
+var health = 5
 var score = 0

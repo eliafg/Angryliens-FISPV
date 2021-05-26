@@ -34,3 +34,10 @@ func shoot(var shoot_angle,var pos,var tr):
 	tr.origin.x = pos.x+X
 	tr.origin.y = pos.y-Y
 	return tr
+
+func _on_BulletArea_area_entered(area):
+	if area.has_method("hit"):
+		area.hit()
+		print(area.name)
+	queue_free() #or whatever you do to destroy the bullet
+	pass # Replace with function body.

@@ -1,0 +1,5 @@
+extends Node
+
+#VARIABLES GLOBALES QUE SON USADAS POR LOS ENEMIGOS Y LA ESCENA PRINCIPAL
+var health = 5
+var score = 0

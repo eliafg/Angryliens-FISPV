@@ -1,0 +1,65 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Resources/Enemies/BlueOrb.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/Bullet.gd" type="Script" id=2]
+
+[sub_resource type="Gradient" id=1]
+offsets = PoolRealArray( 0, 0.333333, 1 )
+colors = PoolColorArray( 1, 1, 0, 1, 1, 0.732026, 0.130719, 0.666667, 1, 0.196078, 0.392157, 0 )
+
+[sub_resource type="GradientTexture" id=2]
+gradient = SubResource( 1 )
+
+[sub_resource type="Curve" id=3]
+min_value = 399.99
+max_value = 400.0
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=4]
+curve = SubResource( 3 )
+
+[sub_resource type="Curve" id=5]
+max_value = 2.5
+_data = [ Vector2( 0, 2.5 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=6]
+curve = SubResource( 5 )
+
+[sub_resource type="ParticlesMaterial" id=7]
+emission_shape = 1
+emission_sphere_radius = 2.0
+flag_disable_z = true
+spread = 180.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 100.0
+initial_velocity_random = 0.5
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 100.0
+linear_accel_random = 0.2
+linear_accel_curve = SubResource( 4 )
+scale = 5.0
+scale_random = 1.0
+scale_curve = SubResource( 6 )
+color_ramp = SubResource( 2 )
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Bullet" type="Sprite" parent="."]
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 1 )
+script = ExtResource( 2 )
+
+[node name="BulletArea" type="Area2D" parent="Bullet"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Bullet/BulletArea"]
+polygon = PoolVector2Array( -9.95358, -19.8166, 10.1053, -19.9042, 10.1053, -14.8238, 14.9229, -14.9114, 15.0105, -10.0061, 19.8282, -10.1813, 19.9158, 9.96516, 14.6602, 9.70238, 14.7478, 14.7828, 9.66734, 14.6076, 9.93012, 19.8632, -9.6908, 19.8632, -9.51561, 14.6076, -14.7712, 14.52, -14.7712, 9.70238, -20.0268, 9.70238, -19.8516, -10.0937, -14.9464, -10.0937, -14.8588, -14.9114, -10.1288, -15.0865 )
+
+[node name="BalaParticulas" type="Particles2D" parent="Bullet"]
+show_behind_parent = true
+amount = 100
+explosiveness = 0.5
+local_coords = false
+process_material = SubResource( 7 )
+
+[connection signal="area_entered" from="Bullet/BulletArea" to="Bullet" method="_on_BulletArea_area_entered"]

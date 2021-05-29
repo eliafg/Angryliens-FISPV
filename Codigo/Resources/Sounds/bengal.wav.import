@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/bengal.wav-37c3a514159fdb806d64c86d772584fd.sample"
+
+[deps]
+
+source_file="res://Resources/Sounds/bengal.wav"
+dest_files=[ "res://.import/bengal.wav-37c3a514159fdb806d64c86d772584fd.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

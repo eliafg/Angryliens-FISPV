@@ -1,0 +1,169 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Scripts/Control.gd" type="Script" id=1]
+[ext_resource path="res://Resources/Menu/buttonLarge.png" type="Texture" id=2]
+[ext_resource path="res://Resources/Images/AngryliensBG.jpeg" type="Texture" id=3]
+[ext_resource path="res://Resources/Menu/kenvector_future_thin.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://Resources/Sounds/Two Moons - Bobby Richards.wav" type="AudioStream" id=5]
+[ext_resource path="res://Resources/Images/amarillo.jpg" type="Texture" id=6]
+[ext_resource path="res://Resources/Images/negro.jpg" type="Texture" id=7]
+[ext_resource path="res://Resources/Enemies/flying.png" type="Texture" id=8]
+[ext_resource path="res://Resources/Enemies/flyingboss.png" type="Texture" id=9]
+[ext_resource path="res://Scripts/MenuMove.gd" type="Script" id=10]
+
+[sub_resource type="DynamicFont" id=1]
+size = 38
+font_data = ExtResource( 4 )
+
+[node name="Node2D" type="Node2D"]
+position = Vector2( 501.9, 266.968 )
+script = ExtResource( 10 )
+
+[node name="Control" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Control"]
+margin_left = -654.852
+margin_top = -309.242
+margin_right = 795.148
+margin_bottom = 545.758
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="amarillo" type="Sprite" parent="Control/NinePatchRect"]
+position = Vector2( 681.619, 434.864 )
+scale = Vector2( 0.30048, 0.597446 )
+texture = ExtResource( 6 )
+
+[node name="negro" type="Sprite" parent="Control/NinePatchRect/amarillo"]
+show_behind_parent = true
+position = Vector2( -0.0116954, 4.35844 )
+scale = Vector2( 1.31379, 1.17358 )
+texture = ExtResource( 7 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -94.0
+margin_top = -45.0
+margin_right = 231.0
+margin_bottom = 247.0
+rect_pivot_offset = Vector2( 447.852, 176.579 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayButton" type="TextureButton" parent="Control/VBoxContainer"]
+margin_right = 325.0
+margin_bottom = 70.0
+texture_normal = ExtResource( 2 )
+
+[node name="Jugar" type="Label" parent="Control/VBoxContainer/PlayButton"]
+margin_top = 9.0
+margin_right = 195.0
+margin_bottom = 54.2277
+custom_fonts/font = SubResource( 1 )
+text = "Jugar"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InstructionButton" type="TextureButton" parent="Control/VBoxContainer"]
+margin_top = 74.0
+margin_right = 325.0
+margin_bottom = 144.0
+texture_normal = ExtResource( 2 )
+
+[node name="Instrucciones" type="Label" parent="Control/VBoxContainer/InstructionButton"]
+margin_left = -16.0
+margin_top = 9.0
+margin_right = 222.0
+margin_bottom = 53.0
+rect_pivot_offset = Vector2( -398.692, -133.202 )
+custom_fonts/font = SubResource( 1 )
+text = "Tutorial"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CreditsButton" type="TextureButton" parent="Control/VBoxContainer"]
+margin_top = 148.0
+margin_right = 325.0
+margin_bottom = 218.0
+texture_normal = ExtResource( 2 )
+
+[node name="Creditos" type="Label" parent="Control/VBoxContainer/CreditsButton"]
+margin_left = -20.7818
+margin_top = 9.55624
+margin_right = 229.218
+margin_bottom = 100.556
+custom_fonts/font = SubResource( 1 )
+text = "Créditos
+"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ExitButton" type="TextureButton" parent="Control/VBoxContainer"]
+margin_top = 222.0
+margin_right = 325.0
+margin_bottom = 292.0
+texture_normal = ExtResource( 2 )
+
+[node name="Salir" type="Label" parent="Control/VBoxContainer/ExitButton"]
+margin_left = -30.6013
+margin_top = 10.2024
+margin_right = 218.399
+margin_bottom = 101.202
+rect_pivot_offset = Vector2( -398.692, -133.202 )
+custom_fonts/font = SubResource( 1 )
+text = "Salir
+"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Jugar2" type="Label" parent="Control"]
+margin_left = -103.026
+margin_top = -220.786
+margin_right = 152.974
+margin_bottom = -173.786
+custom_fonts/font = SubResource( 1 )
+text = "Angryliens"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="relax" type="AudioStreamPlayer" parent="Control"]
+stream = ExtResource( 5 )
+volume_db = -15.0
+
+[node name="flying2" type="Sprite" parent="."]
+position = Vector2( 215.697, -142.958 )
+texture = ExtResource( 8 )
+
+[node name="flying1" type="Sprite" parent="."]
+position = Vector2( -169.473, -139.773 )
+texture = ExtResource( 8 )
+
+[node name="flyingboss" type="Sprite" parent="."]
+position = Vector2( 15.2345, -116.164 )
+texture = ExtResource( 9 )
+[connection signal="pressed" from="Control/VBoxContainer/PlayButton" to="Control" method="_on_PlayButton_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/InstructionButton" to="Control" method="_on_InstructionButton_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/CreditsButton" to="Control" method="_on_CreditsButton_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/ExitButton" to="Control" method="_on_ExitButton_pressed"]

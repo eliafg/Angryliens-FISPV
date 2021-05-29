@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scripts/GreenEnemy.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/GreenAlien.gd" type="Script" id=2]
+[ext_resource path="res://Resources/Enemies/CalbrikTP.png" type="Texture" id=3]
+[ext_resource path="res://Resources/Sounds/teletransportacion.wav" type="AudioStream" id=4]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Enemy" type="Sprite" parent="."]
+scale = Vector2( 0.85624, 0.556852 )
+texture = ExtResource( 3 )
+script = ExtResource( 2 )
+
+[node name="Area2D" type="Area2D" parent="Enemy"]
+script = ExtResource( 1 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Enemy/Area2D"]
+position = Vector2( 1.5995, -13.0791 )
+scale = Vector2( 21.5334, 23.8388 )
+polygon = PoolVector2Array( -0.751774, -1.43017, -0.729456, -1.74263, 0.498037, -1.69055, 0.542671, -1.40413, 0.877442, -1.43017, 0.855124, -1.11772, 1.12294, -1.09168, 1.16758, -0.570919, 2.03798, -0.596957, 2.10493, -0.258464, 2.41739, -0.258464, 2.39507, 0.288334, 2.0603, 0.288334, 2.03798, 0.600791, 1.77016, 0.600791, 1.77016, 0.809094, 1.12294, 0.86117, 1.14526, 1.06947, -1.33204, 1.09551, -1.30973, 0.835132, -1.93463, 0.809094, -1.93463, 0.600791, -2.22477, 0.574753, -2.20245, 0.314372, -2.55954, 0.288334, -2.53722, -0.284502, -2.22477, -0.284502, -2.24708, -0.622995, -1.30973, -0.622995, -1.33204, -1.16979, -1.04191, -1.11772, -1.01959, -1.43017 )
+
+[node name="teletrans" type="AudioStreamPlayer" parent="Enemy"]
+stream = ExtResource( 4 )
+volume_db = -10.0
